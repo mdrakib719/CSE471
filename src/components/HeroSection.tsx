@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { AssistantCircleButton } from "@/components/AssistantCircleButton";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
@@ -163,9 +162,11 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-1
           {/* CTA Buttons */}6 animate-fade-in"
           >
-            <Button variant="hero" size="xl" className="group">
-              Join the Community Today
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <Button variant="hero" size="xl" className="group" asChild>
+              <Link to="/signup">
+                Join the Community Today
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
             <Button variant="outline" size="xl" asChild>
               <Link to="/learn-more">Learn More</Link>
@@ -211,8 +212,6 @@ const HeroSection = () => {
           )}
         </div>
       </div>
-      {/* Floating AI Assistant Button */}
-      <AssistantCircleButton />
     </section>
   );
 };
